@@ -1,6 +1,5 @@
 import React from 'react';
-import '../../App.css';
-import { getData, writeData, getIp, getCountry } from '../utils/util';
+import { getData, writeData, getIp, getCountry, getDomain } from '../utils/util';
 import Loader from '../utils/loader';
 
 class App extends React.Component {
@@ -8,10 +7,11 @@ class App extends React.Component {
 		super(props);
 
 		this.state = {
-			count: 0,
+			count: -1,
 			ip: '',
 			country: '',
-			date: new Date(),
+			date: Date.now(),
+			prev: '',
 			loading: true
 		};
 	}
@@ -20,16 +20,18 @@ class App extends React.Component {
 		getData(this.setState.bind(this));
 		let ipAddress = await getIp();
 		let location = await getCountry();
-
+		let domain = getDomain();
 		this.setState({
 			ip: ipAddress,
 			country: location,
-			loading: false
+			loading: false,
+			prev: domain
 		});
+		console.dir(this.state);
 	}
 
 	render () {
-		if (this.state.loading) {
+		if (this.state.loading || this.state.count < 0) {
 			return <Loader />;
 		} else {
 			return (
