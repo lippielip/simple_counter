@@ -1,49 +1,50 @@
 import React from 'react';
 import '../../App.css';
-
-import { getData, writeData } from '../utils/util';
+import { getData, writeData, getIp, getCountry } from '../utils/util';
+import Loader from '../utils/loader';
 
 class App extends React.Component {
-  constructor(props) {
+	constructor (props) {
 		super(props);
 
 		this.state = {
-      count : 0,
-      date: new Date(),
-      loading: true
+			count: 0,
+			ip: '',
+			country: '',
+			date: new Date(),
+			loading: true
+		};
+	}
 
-    };
-  }
+	async componentDidMount () {
+		let currentCount = await getData();
+		let ipAddress = await getIp();
+		let location = await getCountry();
 
-  async componentDidMount() {
-    let currentCount = await getData()
-    this.setState({
-      count: currentCount,
-      date: new Date(),
-      loading: false
-    });
-  }
+		this.setState({
+			count: currentCount,
+			ip: ipAddress,
+			country: location,
+			loading: false
+		});
+	}
 
-  render() {
-    if (this.state.loading) {
-      return(
-        <div className="App">
-          <header className="App-header">
-          <label className="hero-text">Loading...</label>
-          </header>
-        </div>
-      )
-    } else {
-      return (
-        <div className="App">
-          <header className="App-header">
-            <label className="hero-text">{this.state.count}</label>
-            <button id="counter" className="button" onClick={() => writeData(this.setState.bind(this))}>Increase</button>
-          </header>
-        </div>
-      );
-    }
-  }
+	render () {
+		if (this.state.loading) {
+			return <Loader />;
+		} else {
+			return (
+				<div className="App">
+					<header className="App-header">
+						<label className="hero-text">{this.state.count}</label>
+						<button id="counter" className="button" onClick={() => writeData(this.setState.bind(this), this.state)}>
+							Click Me
+						</button>
+					</header>
+				</div>
+			);
+		}
+	}
 }
 
 export default App;
