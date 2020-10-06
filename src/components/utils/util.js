@@ -13,14 +13,16 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export async function getData () {
-	return await firebase.database().ref('/count').once('value').then(async function (snapshot) {
-		return await snapshot.val();
+export function getData (setState) {
+	firebase.database().ref('/count').on('value', function (snapshot) {
+		setState({
+			count: snapshot.val()
+		});
 	});
 }
 
 export async function writeData (setState, state) {
-	let currentCount = (await getData()) + 1;
+	let currentCount = state.count + 1;
 	setState({
 		count: currentCount,
 		date: new Date()

@@ -17,12 +17,11 @@ class App extends React.Component {
 	}
 
 	async componentDidMount () {
-		let currentCount = await getData();
+		getData(this.setState.bind(this));
 		let ipAddress = await getIp();
 		let location = await getCountry();
 
 		this.setState({
-			count: currentCount,
 			ip: ipAddress,
 			country: location,
 			loading: false
