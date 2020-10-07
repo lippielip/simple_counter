@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 
 test('renders Loader', () => {
-	const { getByText } = render(<App />);
-	const linkElement = getByText(/Loading.../i);
+	const { getByAltText } = render(<App />);
+	const linkElement = getByAltText(/Loading/i);
 	expect(linkElement).toBeInTheDocument();
 });

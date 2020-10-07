@@ -1,6 +1,15 @@
-const { getData } = require('./util');
+const { getIp, getCountry } = require('./util');
 
-test('should get Value greater than 0 from Firebase', () => {
-	let number = getData();
-	expect(number).toBeGreaterThan(0);
+test('should return an IP Address', async () => {
+	let address = await getIp();
+	expect(typeof address).toBe('string');
 });
+
+test(
+	'should return a Country',
+	async () => {
+		let country = await getCountry();
+		expect(typeof country).toBe('string');
+	},
+	30000
+);
