@@ -88,3 +88,16 @@ export function getDomain () {
 		return 'direct access';
 	}
 }
+
+export async function setupVars (setState) {
+	getData(setState);
+	let ipAddress = await getIp();
+	let location = await getCountry();
+	let domain = getDomain();
+	setState({
+		ip: ipAddress,
+		country: location,
+		loading: false,
+		prev: domain
+	});
+}
