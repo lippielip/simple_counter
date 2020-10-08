@@ -36,6 +36,7 @@ jobs:
   release:
     needs: build
     runs-on: ubuntu-latest
+    name: deploy
     steps:
     - uses: actions/checkout@v2.1.0
       with:
