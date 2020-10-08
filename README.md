@@ -1,5 +1,5 @@
-![CI/CD](https://github.com/lippielip/simple_counter/workflows/CICD%20Pipeline/badge.svg)
-![Dev CI](https://github.com/lippielip/simple_counter/workflows/CI%20Pipeline/badge.svg)
+![deploy](https://github.com/lippielip/simple_counter/workflows/deploy/badge.svg)
+![test](https://github.com/lippielip/simple_counter/workflows/test/badge.svg)
 ## Available Scripts
 
 In the project directory, you can run:
