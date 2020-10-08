@@ -1,10 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Loader from '../utils/loader';
+import App from '../app/App';
 import Button from '../utils/button';
 
 test('should render the loading screen', () => {
-	const { getByAltText } = render(<Loader />);
+	const { getByAltText } = render(<App />);
 	const linkElement = getByAltText(/Loading/i);
 	expect(linkElement).toBeInTheDocument();
 });
