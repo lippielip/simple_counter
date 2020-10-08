@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+[![Actions Status](https://github.com/lippielip/simple_counter/workflows/nodeCI/badge.svg)](https://github.com/{owner}/{repo}/actions)
 ## Available Scripts
 
 In the project directory, you can run:
