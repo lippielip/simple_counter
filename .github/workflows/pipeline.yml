@@ -53,11 +53,11 @@ jobs:
           
     - name: List output files
       run: ls
-      
+
     - name: Deploy to OVH
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: sftp://ssh.cluster023.hosting.ovh.net/
+        ftp-server: ftp://ftp.cluster023.hosting.ovh.net/
         ftp-username: ${{ secrets.OVH_HOSTING_USER }}
         ftp-password: ${{ secrets.OVH_HOSTING_PASSWORD }}
         local-dir: build
