@@ -11,7 +11,7 @@ class App extends React.Component {
 			count: -1,
 			ip: '',
 			country: '',
-			date: Date.now(),
+			date: Math.floor(Date.now() / 1000),
 			prev: '',
 			loading: true
 		};
