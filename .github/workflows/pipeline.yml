@@ -36,9 +36,8 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-  echo: ${{ github.ref }}
   release:
-    if: ${{ github.ref == 'refs/heads/master' }}
+    if: ${{ github.ref == 'refs/heads/main' }}
     needs: build
     name: FTP-Deploy-Action
     runs-on: ubuntu-latest
