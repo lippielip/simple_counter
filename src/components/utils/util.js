@@ -67,8 +67,8 @@ export async function getIp () {
 export async function getCountry () {
 	let ip = await getIp();
 	try {
-		let response = await fetch(`https://freegeoip.app/json/${ip}`).catch(function () {
-			throw Error('HTTP Resource does not work on localhost Serviceworker');
+		let response = await fetch(`https://freegeoip.app/json/${ip}`).catch(function (error) {
+			throw error;
 		});
 		let location = await response.json();
 		location = location['country_name'];
