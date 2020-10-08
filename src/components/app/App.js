@@ -1,6 +1,7 @@
 import React from 'react';
-import { getData, writeData, getIp, getCountry, getDomain } from '../utils/util';
+import { writeData, setupVars } from '../utils/util';
 import Loader from '../utils/loader';
+import Button from '../utils/button';
 
 class App extends React.Component {
 	constructor (props) {
@@ -17,16 +18,7 @@ class App extends React.Component {
 	}
 
 	async componentDidMount () {
-		getData(this.setState.bind(this));
-		let ipAddress = await getIp();
-		let location = await getCountry();
-		let domain = getDomain();
-		this.setState({
-			ip: ipAddress,
-			country: location,
-			loading: false,
-			prev: domain
-		});
+		await setupVars(this.setState.bind(this));
 		console.dir(this.state);
 	}
 
@@ -34,16 +26,7 @@ class App extends React.Component {
 		if (this.state.loading || this.state.count < 0) {
 			return <Loader />;
 		} else {
-			return (
-				<div className="App">
-					<header className="App-header">
-						<label className="hero-text">{this.state.count}</label>
-						<button id="counter" className="button" onClick={() => writeData(this.setState.bind(this), this.state)}>
-							Click Me
-						</button>
-					</header>
-				</div>
-			);
+			return <Button count={this.state.count} writeData={writeData} state={this.state} />;
 		}
 	}
 }
