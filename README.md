@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-![CI/CD](https://github.com/actions/simple_counter/workflows/Continuous%20Integration%20Pipeline/badge.svg)
+![example workflow file path](https://github.com/actions/simple_counter/workflows/.github/workflows/main.yml/badge.svg)
 ## Available Scripts
 
 In the project directory, you can run:
