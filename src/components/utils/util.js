@@ -42,7 +42,7 @@ export function writeData (setState, state) {
 	let currentCount = state.count + 1;
 	setState({
 		count: currentCount,
-		date: Date.now()
+		date: Math.floor(Date.now() / 1000)
 	});
 
 	updateCount(currentCount);
