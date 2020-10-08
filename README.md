@@ -1,5 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-[![Actions Status](https://github.com/{owner}/{repo}/workflows/{workflow_name}/badge.svg)](https://github.com/{owner}/{repo}/actions)
+![CI/CD](https://github.com/actions/simple_counter/workflows/main/badge.svg)
 ## Available Scripts
 
 In the project directory, you can run:
