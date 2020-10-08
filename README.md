@@ -1,6 +1,5 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-![CICD Pipeline](https://github.com/lippielip/simple_counter/workflows/CICD%20Pipeline/badge.svg)
-![Dev CI Pipeline](https://github.com/lippielip/simple_counter/workflows/CI%20Pipeline/badge.svg)
+![CI CD Pipeline ](https://github.com/lippielip/simple_counter/workflows/CICD%20Pipeline/badge.svg)
+![Dev CI Pipeline ](https://github.com/lippielip/simple_counter/workflows/CI%20Pipeline/badge.svg)
 ## Available Scripts
 
 In the project directory, you can run:
