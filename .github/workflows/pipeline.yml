@@ -57,7 +57,7 @@ jobs:
     - name: Deploy to OVH
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
-        ftp-server: ftp://ftp.cluster023.hosting.ovh.net/
+        ftp-server: ftp://ftp.cluster023.hosting.ovh.net/www
         ftp-username: ${{ secrets.OVH_HOSTING_USER }}
         ftp-password: ${{ secrets.OVH_HOSTING_PASSWORD }}
         local-dir: build
