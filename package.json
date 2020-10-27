@@ -3,9 +3,13 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"@material-ui/core": "^4.11.0",
+		"@material-ui/icons": "^4.9.1",
 		"bootstrap": "^4.5.2",
+		"chart.js": "^2.9.3",
 		"firebase": "^7.22.0",
 		"react": "^16.13.1",
+		"react-addons-transition-group": "^15.6.2",
 		"react-dom": "^16.13.1",
 		"react-scripts": "3.4.3",
 		"sweetalert2": "^10.3.5"

@@ -5,7 +5,7 @@ export default class Loader extends React.Component {
 	render () {
 		return (
 			<div className="App">
-				<header className="App-header">
+				<header className="basePage">
 					<img src={logo} alt="Loading" className="App-logo" />
 				</header>
 			</div>

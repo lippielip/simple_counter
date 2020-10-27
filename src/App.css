@@ -1,66 +1,120 @@
 .App {
-  text-align: center;
+	text-align: center;
+	display: grid;
 }
 
 .App-logo {
-  height: 15vmin;
-  pointer-events: none;
+	height: 15vmin;
+	pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 0.7s ease-in-out;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 0.7s ease-in-out;
+	}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.basePage {
+	background-color: #282c34;
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 .App-link {
-  color: #61dafb;
+	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .hero-text {
-  font-size: 8vw;
-  margin-bottom: 100px;
+	font-size: 8vw;
+	margin-bottom: 5vh;
+}
+
+@media screen and (min-width: 5000px) {
+	.hero-text {
+		font-size: 400px;
+	}
 }
 
 .button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #683334;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #683334;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #53292a}
+.button:hover {
+	background-color: #53292a;
+}
 
 .button:active {
-  background-color: #53292a;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+	background-color: #53292a;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+button:focus {
+	outline: none;
+}
+#toggleButton {
+	z-index: 200;
+	place-self: center;
+	position: absolute;
+	top: 90vh;
+	right: auto;
+	left: auto;
+	transition: bottom 0.6s, top 0.6s, transform 0.3s;
+}
+.toggleTransform {
+	top: 10px !important;
+	transform: rotate(180deg);
+}
+.ButtonPage-enter {
+	transform: translateY(100%);
+}
+.ButtonPage-enter-active {
+	transform: translateY(0%);
+	transition: 0.5s linear;
+}
+.ButtonPage-exit {
+	transform: translateY(0%);
+}
+.ButtonPage-exit-active {
+	transform: translateY(-100%);
+	transition: 0.5s linear;
+}
+.StatPage-enter {
+	transform: translateY(100%);
+}
+.StatPage-enter-active {
+	transform: translateY(0%);
+	transition: 0.5s linear;
+}
+.StatPage-exit {
+	transform: translateY(0%);
+}
+.StatPage-exit-active {
+	transform: translateY(-100%);
+	transition: 0.5s linear;
 }
