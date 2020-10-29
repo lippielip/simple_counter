@@ -1,7 +1,7 @@
 import React from 'react';
 import { writeData, setupVars } from '../utils/util';
-import Loader from '../utils/loader';
-import Button from '../utils/button';
+import Loader from '../render/loader';
+import Button from '../render/button';
 
 class App extends React.Component {
 	constructor (props) {
