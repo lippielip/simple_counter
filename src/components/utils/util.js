@@ -17,6 +17,7 @@ firebase.initializeApp(firebaseConfig);
 firebase.auth().signInAnonymously().catch(function(error) {
 	var errorCode = error.code;
 	var errorMessage = error.message;
+	alert(`Couldn't sign in. Error code: ${errorCode} ${errorMessage}`);
   });
 
 export function getData (setState) {
