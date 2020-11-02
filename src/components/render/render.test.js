@@ -10,7 +10,7 @@ test('should render the Loader', () => {
 });
 
 test('should render the Form group', () => {
-	const { getByAltText } = render(<Button count={42} writeData={null} state={null} />);
-	const linkElement = getByAltText(/Click Counter/i);
+	const { getByText } = render(<Button count={42} writeData={null} state={null} />);
+	const linkElement = getByText(/42/i);
 	expect(linkElement).toBeInTheDocument();
 });

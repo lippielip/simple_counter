@@ -3,6 +3,7 @@
 # Simple Counter
 ![deploy](https://github.com/lippielip/simple_counter/workflows/deploy/badge.svg)
 ![test](https://github.com/lippielip/simple_counter/workflows/test/badge.svg)
+
 Simple Counter aims to collect the most data possible from a single button click and amalgamate it into comprehensive statistics. The project is bootstrapped with create-react-app and uses their standard npm scripts.
 
 ## Installing
