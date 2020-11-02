@@ -1,8 +1,37 @@
+
+
+# Simple Counter
 ![deploy](https://github.com/lippielip/simple_counter/workflows/deploy/badge.svg)
 ![test](https://github.com/lippielip/simple_counter/workflows/test/badge.svg)
-## Available Scripts
+Simple Counter aims to collect the most data possible from a single button click and amalgamate it into comprehensive statistics. The project is bootstrapped with create-react-app and uses their standard npm scripts.
 
-In the project directory, you can run:
+## Installing
+For the latest stable version:
+```
+git clone https://github.com/lippielip/simple_counter.git
+```
+For the dev Branch:
+```
+git clone https://github.com/lippielip/simple_counter.git
+git checkout dev
+```
+Navigate into project folder and install dependencies:
+```
+npm install
+```
+Create a `.env` file in the project root directory with values:
+```sh
+REACT_APP_API_KEY= your Firebase API_KEY
+REACT_APP_AUTH_DOMAIN = your Firebase AUTH_DOMAIN
+REACT_APP_DATABASE_URL = your Firebase DATABASE_URL
+REACT_APP_PROJECT_ID = your Firebase PROJECT_ID
+REACT_APP_STORAGE_BUCKET = your Firebase STORAGE_BUCKET
+REACT_APP_MESSAGING_SENDER_ID = your Firebase MESSAGING_SENDER_ID
+REACT_APP_APP_ID = your Firebase APP_ID
+```
+
+## Running
+You should now be able to run the application with:
 
 ### `npm start`
 
@@ -26,43 +55,3 @@ The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

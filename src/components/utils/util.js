@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import 'firebase/auth';
 import 'firebase/database';
 import { ErrorAlert, SuccessAlert } from '../utils/alerts';
 
@@ -13,6 +14,11 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+firebase.auth().signInAnonymously().catch(function(error) {
+	var errorCode = error.code;
+	var errorMessage = error.message;
+	alert(`Couldn't sign in. Error code: ${errorCode} ${errorMessage}`);
+  });
 
 export function getData (setState) {
 	firebase.database().ref('/count').on('value', function (snapshot) {
