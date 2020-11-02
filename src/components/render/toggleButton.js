@@ -5,7 +5,10 @@ import ExpandMoreRoundedIcon from '@material-ui/icons/ExpandMoreRounded';
 export default class ToggleButton extends React.Component {
 	toggleClick = () => {
 		document.getElementById('toggleButton').classList.toggle('toggleTransform');
-		this.props.toggleStats();
+		document.getElementById('body').classList.toggle('noScroll');
+		document.getElementById('ButtonPage').classList.toggle('clicked');
+		document.getElementById('StatsPage').classList.toggle('clicked');
+
 	};
 
 	render () {

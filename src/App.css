@@ -7,6 +7,12 @@
 	height: 15vmin;
 	pointer-events: none;
 }
+.noScroll {
+	overflow: hidden;
+}
+.App-link {
+	color: #61dafb;
+}
 
 @media (prefers-reduced-motion: no-preference) {
 	.App-logo {
@@ -16,18 +22,13 @@
 
 .basePage {
 	background-color: #282c34;
-	min-height: 100vh;
-	width: 100%;
 	display: flex;
+	min-height: 100vh;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
 	color: white;
-}
-
-.App-link {
-	color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -77,44 +78,35 @@
 button:focus {
 	outline: none;
 }
+
 #toggleButton {
 	z-index: 200;
 	place-self: center;
 	position: absolute;
-	top: 90vh;
-	right: auto;
-	left: auto;
+	top: calc(95vh - 56px);
+	right: 0;
+	left: 0;
+	margin: auto;
 	transition: bottom 0.6s, top 0.6s, transform 0.3s;
 }
+
 .toggleTransform {
 	top: 10px !important;
 	transform: rotate(180deg);
 }
-.ButtonPage-enter {
-	transform: translateY(100%);
+.buttonPage {
+	-webkit-transition: 0.6s;
 }
-.ButtonPage-enter-active {
-	transform: translateY(0%);
-	transition: 0.5s linear;
+.buttonPage.clicked {
+	transform: translateY(-100vh);
 }
-.ButtonPage-exit {
-	transform: translateY(0%);
+.statPage {
+	-webkit-transition: 0.6s;
+	opacity: 0;
+	height: 0;
 }
-.ButtonPage-exit-active {
-	transform: translateY(-100%);
-	transition: 0.5s linear;
-}
-.StatPage-enter {
-	transform: translateY(100%);
-}
-.StatPage-enter-active {
-	transform: translateY(0%);
-	transition: 0.5s linear;
-}
-.StatPage-exit {
-	transform: translateY(0%);
-}
-.StatPage-exit-active {
-	transform: translateY(-100%);
-	transition: 0.5s linear;
+.statPage.clicked {
+	transform: translateY(-100vh);
+	opacity: 1;
+	height: 100%;
 }

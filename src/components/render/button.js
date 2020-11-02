@@ -3,7 +3,7 @@ import React from 'react';
 export default class ButtonPage extends React.Component {
 	render () {
 		return (
-			<div className="basePage">
+			<div id="ButtonPage" className="basePage buttonPage">
 				<label className="hero-text" alt="Click Counter">
 					{this.props.count}
 				</label>
