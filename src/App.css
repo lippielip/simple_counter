@@ -1,66 +1,112 @@
 .App {
-  text-align: center;
+	text-align: center;
+	display: grid;
 }
 
 .App-logo {
-  height: 15vmin;
-  pointer-events: none;
+	height: 15vmin;
+	pointer-events: none;
+}
+.noScroll {
+	overflow: hidden;
+}
+.App-link {
+	color: #61dafb;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 0.7s ease-in-out;
-  }
+	.App-logo {
+		animation: App-logo-spin infinite 0.7s ease-in-out;
+	}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
+.basePage {
+	background-color: #282c34;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	color: white;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
 
 .hero-text {
-  font-size: 8vw;
-  margin-bottom: 100px;
+	font-size: 8vw;
+	margin-bottom: 5vh;
+}
+
+@media screen and (min-width: 5000px) {
+	.hero-text {
+		font-size: 400px;
+	}
 }
 
 .button {
-  display: inline-block;
-  padding: 15px 25px;
-  font-size: 24px;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  color: #fff;
-  background-color: #683334;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
+	display: inline-block;
+	padding: 15px 25px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #683334;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 9px #999;
 }
 
-.button:hover {background-color: #53292a}
+.button:hover {
+	background-color: #53292a;
+}
 
 .button:active {
-  background-color: #53292a;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+	background-color: #53292a;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+button:focus {
+	outline: none;
+}
+
+#toggleButton {
+	z-index: 200;
+	place-self: center;
+	position: absolute;
+	top: calc(95vh - 56px);
+	right: 0;
+	left: 0;
+	margin: auto;
+	transition: bottom 0.6s, top 0.6s, transform 0.3s;
+}
+
+.toggleTransform {
+	top: 10px !important;
+	transform: rotate(180deg);
+}
+.buttonPage {
+	-webkit-transition: 0.6s;
+}
+.buttonPage.clicked {
+	transform: translateY(-100vh);
+}
+.statPage {
+	-webkit-transition: 0.6s;
+	opacity: 0;
+	height: 0;
+}
+.statPage.clicked {
+	transform: translateY(-100vh);
+	opacity: 1;
+	height: 100%;
 }

@@ -10,7 +10,7 @@ test('should render the Loader', () => {
 });
 
 test('should render the Form group', () => {
-	const { getByLabelText } = render(<Button count={42} writeData={null} state={null} />);
-	const linkElement = getByLabelText(/42/i);
+	const { getByText } = render(<Button count={42} writeData={null} state={null} />);
+	const linkElement = getByText(/42/i);
 	expect(linkElement).toBeInTheDocument();
 });
