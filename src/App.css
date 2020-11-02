@@ -22,12 +22,14 @@
 .basePage {
 	background-color: #282c34;
 	display: flex;
-	min-height: 100vh;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
 	font-size: calc(10px + 2vmin);
 	color: white;
+}
+.fullPage {
+	height: 100vh;
 }
 
 @keyframes App-logo-spin {
@@ -82,32 +84,42 @@ button:focus {
 	z-index: 200;
 	place-self: center;
 	position: absolute;
-	top: calc(95vh - 56px);
+	top: calc(100vh - (40px + 2vmin + 10vh));
 	right: 0;
 	left: 0;
+	width: calc(40px + 2vmin);
+	height: calc(40px + 2vmin);
 	margin: auto;
 	transition: bottom 0.6s, top 0.6s, transform 0.3s;
 }
 
 .toggleTransform {
-	top: 10px !important;
+	top: 3vh !important;
 	transform: rotate(180deg);
 }
+
 .buttonPage {
+	transition: 0.6s;
 	-webkit-transition: 0.6s;
-	padding-bottom: 100px;
+	height: 100vh;
+	padding-bottom: calc(40px + 2vmin + 10vh);
 }
+.statPage.clicked {
+	opacity: 1;
+	height: 100vh;
+	padding-top: calc(40px + 2vmin + 6vh);
+}
+
 .buttonPage.clicked {
 	transform: translateY(-100vh);
+	opacity: 0;
+	height: 0;
+	padding: 0;
 }
 .statPage {
+	transition: 0.6s;
 	-webkit-transition: 0.6s;
 	opacity: 0;
 	height: 0;
-	padding-top: 80px;
-}
-.statPage.clicked {
-	transform: translateY(-100vh);
-	opacity: 1;
-	height: 100%;
+	padding: 0;
 }
