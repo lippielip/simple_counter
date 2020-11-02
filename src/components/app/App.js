@@ -17,18 +17,19 @@ class App extends React.Component {
 			// Convert Milliseconds to Seconds (UNIX Timestamp)
 			date: Math.floor(Date.now() / 1000),
 			prev: '',
+			loading: true
 		};
 	}
 
 	async componentDidMount () {
 		// get all values with the functions in util.js and set them in the state. This also controls the loading attribute
 		await setupVars(this.setState.bind(this));
-		console.dir(this.state);
+		this.setState({loading: false})
 	}
 
 	render () {
 		//keep loading until the count has been updated. There is a slight delay between loading being set to false and the count actually updating
-		if (this.state.count < 0) {
+		if (this.state.loading || this.state.count < 0) {
 			return <Loader />;
 		} else {
 			return (
